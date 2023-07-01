@@ -6,9 +6,15 @@ import {
     VStack,
     useBreakpointValue,
   } from '@chakra-ui/react';
-  
+  import useAlan from "./Alan";
+  import { useRef } from 'react';
   export default function WithBackgroundImage() {
+    const alanBtnContainer = useRef();
+    useAlan();
     return (
+      <>
+
+
       <Flex
         w={'full'}
         h={'100vh'}
@@ -50,5 +56,7 @@ import {
           </Stack>
         </VStack>
       </Flex>
+      <div ref={alanBtnContainer}></div>
+      </>
     );
   }
