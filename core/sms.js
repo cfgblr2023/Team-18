@@ -4,11 +4,15 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_API_KEY;
 const client = require('twilio')(accountSid, authToken);
 
-client.messages
-    .create({
-        body: 'Code for good is awesome!',
-        from: '+14847349651',
-        to: '+918431112350'
-    })
-    .then(message => console.log(message.sid));
+const sendSMS = (body, to) => {
+    client.messages
+        .create({
+            body: body,
+            from: process.env.TWILIO_PHONE_NUMBER,
+            to: to
+        })
+        .then(message => console.log(message.sid));
+}
+
+module.exports = sendSMS;
 
