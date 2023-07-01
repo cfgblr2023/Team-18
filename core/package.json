@@ -12,7 +12,8 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "googleapis": "^120.0.0",
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^3.3.1",
+    "twilio": "^4.13.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
