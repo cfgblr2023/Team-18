@@ -4,19 +4,33 @@ class CourseRepository {
 
     db = {};
 
-    // constructor() {
-    //     this.db = connect();
-    //     // For Development
-    //     this.db.sequelize.sync({ force: true }).then(() => {
-    //         console.log("Drop and re-sync db.");
-    //     });
-    // }
+    constructor() {
+        this.db = connect();
+        // For Development
+        // this.db.sequelize.sync({ force: true }).then(() => {
+        //     console.log("Drop and re-sync db.");
+        // });
+    }
 
     async createCourse(course) {
         console.log("CREATE COURSE", course);
         let data = {};
         try {
             data = await this.db.courses.create(course);
+            // add it to course_skills table
+            course.skills.forEach(async skill => {
+                console.log("CREATE COURSE SKILL", skill);
+                try {
+                    await this.db.course_skills.create({
+                        courseId: data.id,
+                        skillId: skill
+                    });
+                } catch (err) {
+                    console.log('Error1::' + err);
+                    // logger.error('Error::' + err);
+                }
+
+            });
         } catch (err) {
             console.log('Error::' + err);
             // logger.error('Error::' + err);
@@ -46,12 +60,14 @@ class CourseRepository {
 
     async getCoursesBySkill(skillId) {
         let data = {};
+        let skills = {};
         try {
             skills = await this.db.course_skills.findAll({
                 where: {
                     skillId: skillId
                 }
             });
+            console.log("SKILLS", skills);
             data = await this.db.courses.findAll({
                 where: {
                     id: skills.map(skill => skill.courseId)
@@ -60,6 +76,7 @@ class CourseRepository {
 
         } catch (err) {
             // logger.error('Error::' + err);
+            console.log('Error::' + err);
         }
         return data;
     }

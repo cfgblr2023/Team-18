@@ -24,7 +24,7 @@ router.get("/:courseId", async (req, res) => {
 });
 
 router.get("/skill/:skillId", async (req, res) => {
-    console.log("Course Route");
+    console.log("Course Route lol");
     const skillId = req.params.skillId;
     const result = await courseController.getCoursesBySkill(skillId);
     res.send(result);
