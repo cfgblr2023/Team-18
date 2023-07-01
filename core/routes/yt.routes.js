@@ -16,9 +16,9 @@ router.get("/ai", async (req, res) => {
     const plays = []
     try {
         await Promise.all(qs.map(async q => {
-            console.log(q);
-            r = await playlist(q);
-            console.log(r);
+            const r = {}
+            r.id = await playlist(q);
+            r.module = q;
             plays.push(r);
         }));
     } catch (e) {
