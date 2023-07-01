@@ -6,7 +6,18 @@ module.exports = (sequelize, DataTypes, Model) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+        description: {
+            type: DataTypes.STRING
+        },
+        timings: {
+            type: DataTypes.STRING
+        },
+        mode: {
+            type: DataTypes.INTEGER
+        },
+
+        
     }, {
         sequelize,
         modelName: 'courses'
@@ -23,9 +34,13 @@ module.exports = (sequelize, DataTypes, Model) => {
             as: 'skills',
             foreignKey: 'courseId'
         });
+        Courses.belongsToMany(models.langs, {
+            through:  'course_langs',
+            as: 'langs',
+            foreignKey: 'courseId'
+        });
     }
 
     return Courses;
 }
-
 

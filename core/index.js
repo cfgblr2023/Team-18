@@ -2,18 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config()
 
-const userController = require('./controller/user.controller')
+const user = require("./routes/user.routes");
+const course = require("./routes/course.routes");
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-app.post('/user', async (req, res) => {
-    const user = req.body;
-    const result = await userController.createUser(user);
-    res.send(result);
-});
+app.use('/user', user);
+app.use('/course', course);
 
 app.get('/', (req, res) => {
     res.send(`<h1>API Works !!!</h1>`)
