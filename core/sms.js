@@ -15,4 +15,3 @@ const sendSMS = (body, to) => {
 }
 
 module.exports = sendSMS;
-
