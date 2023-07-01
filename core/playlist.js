@@ -12,11 +12,11 @@ async function searchPlaylist(query) {
     const res = await youtube.search.list({
         part: 'snippet',
         q: query,
-        maxResults: 10,
-        type: 'playlist'
+        maxResults: 1,
+        type: 'video'
     });
 
-    return res.data.items;
+    return res.data.items[0].id.videoId;
 }
 
 module.exports = searchPlaylist;
