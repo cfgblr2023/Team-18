@@ -1,7 +1,13 @@
 {
-  "name": "my-app",
+  "name": "lamp",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/next-js": "^2.1.4",
@@ -19,11 +25,5 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "react-phone-input-2": "^2.15.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   }
 }
