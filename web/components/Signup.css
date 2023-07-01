@@ -1,0 +1,27 @@
+.section{
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text{
+    text-align: center;
+    color: black;
+    font: medium;
+    margin-top: 10px;
+}
+.text1{
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.tex2{
+    font-weight: bold;
+    font-size: 1.25;
+    color: black;
+    text-align: center;
+}
