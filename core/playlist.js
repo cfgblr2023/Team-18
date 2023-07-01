@@ -19,4 +19,4 @@ async function searchPlaylist(query) {
     return res.data.items;
 }
 
-searchPlaylist('lofi').then(res => console.log(res));
+module.exports = searchPlaylist;
