@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const playlist = require('../playlist');
+const gpt = require('../gpt');
 
 router.get("/", async (req, res) => {
     console.log("YT Route");
@@ -8,6 +9,22 @@ router.get("/", async (req, res) => {
     res.send(result);
 });
 
+router.get("/ai", async (req, res) => {
+    console.log("YT AI Route");
+    const result = await gpt(req.query.q);
+    qs = result.split("\n");
+    const plays = []
+    try {
+        await Promise.all(qs.map(async q => {
+            console.log(q);
+            r = await playlist(q);
+            console.log(r);
+            plays.push(r);
+        }));
+    } catch (e) {
+        console.log(e);
+    }
+    res.send(plays);
+});
+
 module.exports = router;
-
-
