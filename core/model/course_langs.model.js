@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes, Model) => {
 
-    class UserSkills extends Model { }
+    class UserLangs extends Model { }
 
-    UserSkills.init({
+    UserLangs.init({
         userId: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -11,18 +11,18 @@ module.exports = (sequelize, DataTypes, Model) => {
                 key: 'id'
             }
         },
-        skillId: {
+        langId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'skills',
+                model: 'langs',
                 key: 'id'
             }
         }
     }, {
         sequelize,
-        modelName: 'user_skills'
+        modelName: 'user_langs'
     });
 
-    return UserSkills;
+    return UserLangs;
 }

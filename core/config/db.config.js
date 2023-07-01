@@ -30,6 +30,9 @@ const connect = () => {
     db.user_skills = require("../model/user_skills.model")(sequelize, DataTypes, Model);
     db.user_courses = require("../model/user_courses.model")(sequelize, DataTypes, Model);
     db.course_skills = require("../model/course_skills.model")(sequelize, DataTypes, Model);
+    db.langs = require("../model/lang.model")(sequelize, DataTypes, Model);
+    db.user_langs = require("../model/user_langs.model")(sequelize, DataTypes, Model);
+    db.course_langs = require("../model/course_langs.model")(sequelize, DataTypes, Model);
 
     return db;
 

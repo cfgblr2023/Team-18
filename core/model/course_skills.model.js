@@ -5,11 +5,19 @@ module.exports = (sequelize, DataTypes, Model) => {
     CourseSkills.init({
         courseId: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            references: {
+                model: 'courses',
+                key: 'id'
+            }
         },
         skillId: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            references: {
+                model: 'skills',
+                key: 'id'
+            }
         }
     }, {
         sequelize,
