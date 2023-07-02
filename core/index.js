@@ -1,6 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config()
+
 
 const user = require("./routes/user.routes");
 const course = require("./routes/course.routes");
@@ -12,6 +14,9 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+app.use(cors({
+    origin: ['http://localhost:3000'],
+}));
 app.use('/user', user);
 app.use('/course', course);
 app.use('/yt', yt);
