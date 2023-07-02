@@ -61,12 +61,6 @@ const AI = () => {
 
     return (
         <>
-<<<<<<< HEAD
-            <Search/>
-
-
-
-=======
             <NavLoggedin />
             <VStack spacing={8} align="center" p={10}>
                 <Heading>AI-based Learning Management System</Heading>
@@ -120,7 +114,6 @@ const AI = () => {
 
 
             </VStack>
->>>>>>> main
         </>
     );
 };
