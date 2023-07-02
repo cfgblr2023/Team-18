@@ -18,9 +18,9 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Image as LogoImage
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons";
-import Slidebar from "./Slidebar";
 
 const Links = ["AILMS", "COURSES", "ABOUT", "CONTACT"];
 
@@ -61,8 +61,10 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Logo</Box>
-            <HStack
+            <LogoImage src='https://lampeducationtrust.com/wp-content/uploads/2023/02/cropped-Copy-of-LAMP-1.png'
+              w="45"
+              h="45"
+            />            <HStack
               as={"nav"}
               spacing={4}
               display={{ base: "none", md: "flex" }}
@@ -121,9 +123,7 @@ export default function Simple() {
         ) : null}
       </Box>
 
-      <Box p={4}>
-        <Slidebar />
-      </Box>
+
     </>
   );
 }

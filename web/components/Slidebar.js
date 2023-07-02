@@ -1,3 +1,4 @@
+"use client"
 import React,{useState} from 'react';
 import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
