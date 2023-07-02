@@ -208,7 +208,7 @@ const MobileNavItem = ({ label, children, href }) => {
                     textDecoration: 'none',
                 }}>
                 <Text
-                    fontWeight={600}
+                    fontWeight={900}
                     color={useColorModeValue('gray.600', 'gray.200')}>
                     {label}
                 </Text>
@@ -246,41 +246,19 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
     {
-        label: 'Inspiration',
-        children: [
-            {
-                label: 'Explore Design Work',
-                subLabel: 'Trending Design to inspire you',
-                href: '#',
-            },
-            {
-                label: 'New & Noteworthy',
-                subLabel: 'Up-and-coming Designers',
-                href: '#',
-            },
-        ],
+        label: 'Volunteers',
+        
     },
     {
-        label: 'Find Work',
-        children: [
-            {
-                label: 'Job Board',
-                subLabel: 'Find your dream design job',
-                href: '#',
-            },
-            {
-                label: 'Freelance Projects',
-                subLabel: 'An exclusive list for contract work',
-                href: '#',
-            },
-        ],
+        label: 'Fund raisers',
+        
     },
     {
-        label: 'Learn Design',
+        label: 'Communications',
         href: '#',
     },
-    {
-        label: 'Hire Designers',
-        href: '#',
-    },
+    // {
+    //     label: 'Hire Designers',
+    //     href: '#',
+    // },
 ];

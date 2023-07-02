@@ -106,7 +106,7 @@ const App = () => {
             fontSize: '1.875rem',
             marginBottom: '1.5rem'
           }}>
-              Welcome to <br /> CODE A PROGRAM
+              Welcome to <br /> LAMP NGO
             </h1>
             {showOTP ? (
               <>

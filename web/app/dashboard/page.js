@@ -7,7 +7,28 @@ const Dashboard = () => {
   return (
     <>
         <NavLoggedin />
+        <div style={{display:"flex",gap:"20px"}}>
+
         <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        </div>
+        <div style={{display:"flex",gap:"20px"}}>
+
+<CourseCard />
+<CourseCard />
+<CourseCard />
+<CourseCard />
+</div>
+ <div style={{display:"flex",gap:"20px"}}>
+
+<CourseCard />
+<CourseCard />
+<CourseCard />
+<CourseCard />
+</div>
+
     </>
   )
 }

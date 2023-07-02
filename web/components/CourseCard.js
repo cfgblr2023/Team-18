@@ -11,9 +11,10 @@ import {
 
 export default function blogPostWithImage() {
   return (
-    <Center py={6}>
+    <Center py={6} px={3}>
       <Box
-        maxW={'445px'}
+        maxW={'330px'}
+        maxH={'350px'}
         w={'full'}
         bg={useColorModeValue('white', 'gray.900')}
         boxShadow={'2xl'}
