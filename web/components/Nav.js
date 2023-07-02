@@ -14,6 +14,7 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
+    Image,
 } from '@chakra-ui/react';
 import {
     HamburgerIcon,
@@ -21,6 +22,8 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
 } from '@chakra-ui/icons';
+
+
 
 export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
@@ -55,10 +58,18 @@ export default function WithSubnavigation() {
                         textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                         fontFamily={'heading'}
                         color={useColorModeValue('gray.800', 'white')}>
-                        Logo
+                        {/* Lamp */}
                     </Text>
 
-                    <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+                    <Image src='https://lampeducationtrust.com/wp-content/uploads/2023/02/cropped-Copy-of-LAMP-1.png'
+                        w="45"
+                        h="45"
+                    />
+
+
+                    <Flex display={{ base: 'none', md: 'flex' }} ml={10}
+                    mt={2}
+                    >
                         <DesktopNav />
                     </Flex>
                 </Flex>
@@ -247,11 +258,11 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
     {
         label: 'Volunteers',
-        
+
     },
     {
         label: 'Fund raisers',
-        
+
     },
     {
         label: 'Communications',
