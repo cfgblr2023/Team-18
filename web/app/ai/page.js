@@ -1,6 +1,5 @@
 "use client"
 import { useState } from 'react';
-import axios from 'axios';
 import {
     Box, HStack, Heading, Input, VStack, Text, Button,
     Accordion,
@@ -9,6 +8,8 @@ import {
     AccordionPanel,
     AccordionIcon,
 } from '@chakra-ui/react'
+
+import NavLoggedin from '../../components/NavLoggedin'
 
 const AI = () => {
     const [search, setSearch] = useState('');
@@ -58,10 +59,9 @@ const AI = () => {
         </div>
     );
 
-
-
     return (
         <>
+            <NavLoggedin />
             <VStack spacing={8} align="center" p={10}>
                 <Heading>AI-based Learning Management System</Heading>
                 <HStack
